@@ -1,54 +1,25 @@
 package BaithuchanhJava.Baithuchanh2302;
 
 import java.util.Scanner;
+
+/**
+ * Slide35
+ */
 public class slide35 {
-    private static Scanner scanner = new Scanner(System.in);        
-    
+
     public static void main(String[] args) {
-        System.out.print("Nhập hệ số bậc 2, a = ");
-        float a = slide35.scanner.nextFloat();
-        System.out.print("Nhập hệ số bậc 1, b = ");
-        float b = slide35.scanner.nextFloat();
-        System.out.print("Nhập hằng số tự do, c = ");
-        float c = scanner.nextFloat();
-        slide35.giaiPTBac2(a, b, c);
-
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Nhập vào giá trị của số thứ 1 = ");
+        int x=Integer.parseInt(scan.nextLine());
+        System.out.print("Nhập vào giá trị của số thứ 2 = ");
+        int y=Integer.parseInt(scan.nextLine());
+        System.out.println("Số nhỏ nhất trong 2 số là: "+ getMinimum(x,y));
+        scan.close();
     }
 
-        /**
-         * Giải phương trình bậc 2: ax2 + bx + c = 0
-         * @param a: hệ số bậc 2
-         * @param b: hệ số bậc 1
-         * @param c: số hạng tự do
-         */
-    private static void giaiPTBac2(float a, float b, float c) {
-        // kiểm tra các hệ số
-        if (a == 0) {
-            if (b == 0) {
-                System.out.println("Phương trình vô nghiệm!");
-            } else {
-                System.out.println("Phương trình có một nghiệm: "
-                        + "x = " + (-c / b));
-            }
-            return;
-    }
-    // tính delta
-    float delta = b*b - 4*a*c;
-    float x1;
-    float x2;
-    // tính nghiệm
-    if (delta > 0) {
-        x1 = (float) ((-b + Math.sqrt(delta)) / (2*a));
-        x2 = (float) ((-b - Math.sqrt(delta)) / (2*a));
-        System.out.println("Phương trình có 2 nghiệm là: "
-                + "x1 = " + x1 + " và x2 = " + x2);
-    } else if (delta == 0) {
-        x1 = (-b / (2 * a));
-        System.out.println("Phương trình có nghiệm kép: "
-                + "x1 = x2 = " + x1);
-    } else {
-        System.out.println("Phương trình vô nghiệm!");
+    private static int getMinimum(int x, int y) {
+        if(x>y)
+            return y;
+        return x;
     }
 }
-    }    
-    
